@@ -1,6 +1,7 @@
 package br.edu.ifpb.es.daw;
 
 import br.edu.ifpb.es.daw.dao.UserSTDAO;
+import br.edu.ifpb.es.daw.dao.impl.UserSTDAOImpl;
 import br.edu.ifpb.es.daw.entities.st.UserST;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -11,7 +12,7 @@ public class MainUserUpdate {
 
 	public static void main(String[] args) throws DawException {
 		try(EntityManagerFactory emf = Persistence.createEntityManagerFactory("daw")) {
-			UserSTDAO dao = new UserSTDAO(emf);
+			UserSTDAO dao = new UserSTDAOImpl(emf);
 			// Primeiro salvar
 			UserST user = new UserST();
 

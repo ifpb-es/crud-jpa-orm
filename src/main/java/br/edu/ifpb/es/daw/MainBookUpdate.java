@@ -1,5 +1,6 @@
 package br.edu.ifpb.es.daw;
 
+import br.edu.ifpb.es.daw.dao.impl.BookDAOImpl;
 import br.edu.ifpb.es.daw.dao.BookDAO;
 import br.edu.ifpb.es.daw.entities.Book;
 import jakarta.persistence.EntityManagerFactory;
@@ -10,7 +11,7 @@ public class MainBookUpdate {
 	
 	public static void main(String[] args) throws DawException {
 		try(EntityManagerFactory emf = Persistence.createEntityManagerFactory("daw")) {
-			BookDAO dao = new BookDAO(emf);
+			BookDAO dao = new BookDAOImpl(emf);
 			// Primeiro salvar
 			Book book = new Book();
 			
