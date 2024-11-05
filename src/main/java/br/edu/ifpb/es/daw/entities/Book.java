@@ -1,17 +1,13 @@
 package br.edu.ifpb.es.daw.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
 @Entity
 @Table(name = "TB_BOOK", uniqueConstraints = { 
-		@UniqueConstraint(name = "UC_LIVRO", columnNames = { "TITLE", "DESCRIPTION" }) })
+		@UniqueConstraint(name = "UC_LIVRO", columnNames = { "TITLE", "DESCRIPTION" })
+})
 public class Book {
 
 	@Id

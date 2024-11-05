@@ -10,7 +10,11 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "TB_USER")
-@SecondaryTables({ @SecondaryTable(name = "TB_ADDRESS_ST") })
+@SecondaryTables({
+		@SecondaryTable(name = "TB_ADDRESS_ST",
+						pkJoinColumns = { @PrimaryKeyJoinColumn(name = "ID_USER") },
+						foreignKey = @ForeignKey(name = "FK__TB_ADDRESS_ST__TB_USER"))
+})
 public class UserST {
 
 	@Id
