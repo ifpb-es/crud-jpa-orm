@@ -2,12 +2,14 @@ package br.edu.ifpb.es.daw;
 
 import br.edu.ifpb.es.daw.dao.BookDAO;
 import br.edu.ifpb.es.daw.entities.Book;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public class MainBookSave {
 
 	public static void main(String[] args) throws DawException {
-		BookDAO dao = new BookDAO();
-		try {
+		try(EntityManagerFactory emf = Persistence.createEntityManagerFactory("daw")) {
+			BookDAO dao = new BookDAO(emf);
 			Book book = new Book();
 			
 			book.setTitle("Título " + System.nanoTime());
@@ -22,8 +24,6 @@ public class MainBookSave {
 			dao.save(book);
 
 			System.out.println(book);
-		} finally {
-			dao.close();
 		}
 	}
 
