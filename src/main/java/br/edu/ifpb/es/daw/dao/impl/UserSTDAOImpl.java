@@ -54,12 +54,12 @@ public class UserSTDAOImpl extends DAO implements UserSTDAO {
 		}
 	}
 
-	public void delete(UserST user) throws PersistenciaDawException {
+	public void delete(Integer userId) throws PersistenciaDawException {
 		try(EntityManager em = getEntityManager()) {
 			EntityTransaction transaction = em.getTransaction();
 			transaction.begin();
 			try {
-				user = em.find(UserST.class, user.getId());
+				UserST user = em.find(UserST.class, userId);
 				em.remove(user);
 				transaction.commit();
 			} catch (PersistenceException pe) {
@@ -72,7 +72,7 @@ public class UserSTDAOImpl extends DAO implements UserSTDAO {
 		}
 	}
 
-	public UserST getByID(int userId) throws PersistenciaDawException {
+	public UserST getByID(Integer userId) throws PersistenciaDawException {
 		try(EntityManager em = getEntityManager()) {
 			UserST resultado = null;
 			try {

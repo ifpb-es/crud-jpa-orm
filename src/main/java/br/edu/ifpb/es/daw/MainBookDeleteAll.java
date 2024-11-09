@@ -16,7 +16,7 @@ public class MainBookDeleteAll {
 			BookDAO dao = new BookDAOImpl(emf);
 			List<Book> books = dao.getAll();
 			for (Book book : books) {
-				dao.delete(book);
+				dao.delete(book.getId());
 			}
 		}
 	}

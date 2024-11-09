@@ -32,7 +32,7 @@ public class MainUserDelete {
 
 			// Depois apagar
 
-			dao.delete(user);
+			dao.delete(user.getId());
 
 			System.out.println(dao.getAll().size());
 		}

@@ -15,7 +15,7 @@ public class MainUserDeleteAll {
 			UserSTDAO dao = new UserSTDAOImpl(emf);
 			List<UserST> usuarios = dao.getAll();
 			for (UserST usuario : usuarios) {
-				dao.delete(usuario);
+				dao.delete(usuario.getId());
 			}
 		}
 	}

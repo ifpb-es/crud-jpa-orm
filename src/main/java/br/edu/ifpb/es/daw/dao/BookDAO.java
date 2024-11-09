@@ -10,9 +10,9 @@ public interface BookDAO {
 
     Book update(Book book) throws PersistenciaDawException;
 
-    void delete(Book book) throws PersistenciaDawException;
+    void delete(Long bookId) throws PersistenciaDawException;
 
-    Book getByID(long bookId) throws PersistenciaDawException;
+    Book getByID(Long bookId) throws PersistenciaDawException;
 
     List<Book> getAll() throws PersistenciaDawException;
 

@@ -55,12 +55,12 @@ public class BookDAOImpl extends DAO implements BookDAO {
 		}
 	}
 
-	public void delete(Book book) throws PersistenciaDawException {
+	public void delete(Long bookId) throws PersistenciaDawException {
 		try(EntityManager em = getEntityManager()) {
 			EntityTransaction transaction = em.getTransaction();
 			transaction.begin();
 			try {
-				book = em.find(Book.class, book.getId());
+				Book book = em.find(Book.class, bookId);
 				em.remove(book);
 				transaction.commit();
 			} catch (PersistenceException pe) {
@@ -73,7 +73,7 @@ public class BookDAOImpl extends DAO implements BookDAO {
 		}
 	}
 
-	public Book getByID(long bookId) throws PersistenciaDawException {
+	public Book getByID(Long bookId) throws PersistenciaDawException {
 		try(EntityManager em = getEntityManager()) {
 			Book resultado = null;
 			try {

@@ -29,7 +29,7 @@ public class MainBookDelete {
 
 			// Depois apagar
 
-			dao.delete(book);
+			dao.delete(book.getId());
 
 			System.out.println(dao.getAll().size());
 		}
