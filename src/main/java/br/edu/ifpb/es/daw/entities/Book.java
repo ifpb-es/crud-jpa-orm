@@ -11,7 +11,8 @@ import java.util.Objects;
 public class Book {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(generator = "jpa_book_seq")
+	@SequenceGenerator(name = "jpa_book_seq", sequenceName = "tb_book_seq")
 	private Long id;
 
 	private String title;
