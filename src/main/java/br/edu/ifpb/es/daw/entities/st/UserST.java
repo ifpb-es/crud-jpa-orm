@@ -9,9 +9,9 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "TB_USER")
+@Table(name = "USERS")
 @SecondaryTables({
-		@SecondaryTable(name = "TB_ADDRESS_ST",
+		@SecondaryTable(name = "ST_ADDRESSES",
 						pkJoinColumns = { @PrimaryKeyJoinColumn(name = "ID_USER") },
 						foreignKey = @ForeignKey(name = "FK__TB_ADDRESS_ST__TB_USER"))
 })
@@ -34,19 +34,19 @@ public class UserST {
 	@Column(name = "BIRTHDAY")
 	private LocalDate birthday;
 
-	@Column(table = "TB_ADDRESS_ST")
+	@Column(table = "ST_ADDRESSES")
 	private String street;
 
-	@Column(table = "TB_ADDRESS_ST")
+	@Column(table = "ST_ADDRESSES")
 	private String city;
 
-	@Column(table = "TB_ADDRESS_ST")
+	@Column(table = "ST_ADDRESSES")
 	private String state;
 
-	@Column(table = "TB_ADDRESS_ST")
+	@Column(table = "ST_ADDRESSES")
 	private String zipcode;
 
-	@Column(table = "TB_ADDRESS_ST")
+	@Column(table = "ST_ADDRESSES")
 	private String country;
 
 	public UserST() {

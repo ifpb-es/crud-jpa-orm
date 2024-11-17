@@ -5,14 +5,14 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "TB_BOOK", uniqueConstraints = { 
+@Table(name = "BOOKS", uniqueConstraints = {
 		@UniqueConstraint(name = "UC_LIVRO", columnNames = { "TITLE", "DESCRIPTION" })
 })
 public class Book {
 
 	@Id
-	@GeneratedValue(generator = "jpa_book_seq")
-	@SequenceGenerator(name = "jpa_book_seq", sequenceName = "tb_book_seq")
+	@GeneratedValue(generator = "jpa_books_seq")
+	@SequenceGenerator(name = "jpa_books_seq", sequenceName = "books_id_seq")
 	private Long id;
 
 	private String title;
