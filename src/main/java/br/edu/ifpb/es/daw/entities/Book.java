@@ -5,9 +5,10 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "BOOKS", uniqueConstraints = {
-		@UniqueConstraint(name = "UC_LIVRO", columnNames = { "TITLE", "DESCRIPTION" })
-})
+@Table(name = "BOOKS",
+		uniqueConstraints = { @UniqueConstraint(name = "UC_LIVRO", columnNames = { "TITLE", "DESCRIPTION" }) },
+		indexes = { @Index(name = "IX_BOOKS__ISBN", columnList = "isbn") }
+)
 public class Book {
 
 	@Id
