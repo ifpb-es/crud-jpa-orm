@@ -2,7 +2,7 @@ package br.edu.ifpb.es.daw.dao.impl;
 
 import java.util.List;
 
-import br.edu.ifpb.es.daw.dao.DAO;
+import br.edu.ifpb.es.daw.dao.AbstractDAOImpl;
 import br.edu.ifpb.es.daw.dao.BookDAO;
 import br.edu.ifpb.es.daw.dao.PersistenciaDawException;
 import jakarta.persistence.EntityManager;
@@ -13,7 +13,7 @@ import jakarta.persistence.TypedQuery;
 
 import br.edu.ifpb.es.daw.entities.Book;
 
-public class BookDAOImpl extends DAO implements BookDAO {
+public class BookDAOImpl extends AbstractDAOImpl implements BookDAO {
 
 	public BookDAOImpl(EntityManagerFactory emf) {
 		super(emf);

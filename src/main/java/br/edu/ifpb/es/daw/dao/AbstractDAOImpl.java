@@ -3,11 +3,11 @@ package br.edu.ifpb.es.daw.dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 
-public abstract class DAO {
+public abstract class AbstractDAOImpl {
 
 	private EntityManagerFactory emf;
 
-	public DAO(EntityManagerFactory emf) {
+	public AbstractDAOImpl(EntityManagerFactory emf) {
 		this.emf = emf;
 	}
 

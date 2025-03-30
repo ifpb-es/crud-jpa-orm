@@ -1,6 +1,6 @@
 package br.edu.ifpb.es.daw.dao.impl;
 
-import br.edu.ifpb.es.daw.dao.DAO;
+import br.edu.ifpb.es.daw.dao.AbstractDAOImpl;
 import br.edu.ifpb.es.daw.dao.UserSTDAO;
 import br.edu.ifpb.es.daw.dao.PersistenciaDawException;
 import br.edu.ifpb.es.daw.entities.st.UserST;
@@ -12,7 +12,7 @@ import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
-public class UserSTDAOImpl extends DAO implements UserSTDAO {
+public class UserSTDAOImpl extends AbstractDAOImpl implements UserSTDAO {
 
 	public UserSTDAOImpl(EntityManagerFactory emf) {
 		super(emf);
